@@ -12,7 +12,7 @@ import com.framework.foundation.ActivityBase
 import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService
 
 class MainActivity : ActivityBase() {
-
+    // todo: 2024/1/24 23:22 将数据库测试按钮提升至单独组件而不是页面
     private lateinit var binding: ActivityMainBinding
 
     private val viewModel by viewModels<MainViewModule>()
@@ -20,7 +20,9 @@ class MainActivity : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+//        这两种方式只是使用方式不同，但是整体效果相同
+//        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // 函数绑定

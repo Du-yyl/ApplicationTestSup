@@ -1,20 +1,21 @@
 package com.framework.foundation
 
 import android.app.Application
+import android.graphics.Typeface
 import android.util.Log
+import android.widget.Toast
+import androidx.annotation.NonNull
 import com.dataStorage.roomData.RoomDatabaseHelper
 import com.dataStorage.roomData.entity.User
 import com.dataStorage.roomData.services.UserService
 import com.enums.UserTypeEnum
 import com.exceptions.GlobalExceptionHandler
 import com.expand.toJson
+import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import splitties.systemservices.launcherApps
 
 /**
  * @time :2024/1/7 15:18 26
@@ -48,6 +49,25 @@ open class ApplicationBase : Application() {
 
         // 数据库初始化
         initData()
+
+        // 提示组件初始化
+        promptsComponentInit()
+    }
+
+    /**
+     * 提示组件初始化
+     */
+    private fun promptsComponentInit() {
+//        Toasty.Config.getInstance()
+//            .tintIcon(true) // optional (apply textColor also to the icon)
+//            .setToastTypeface(@NonNull Typeface typeface) // optional
+//            .setTextSize(int sizeInSp) // optional
+//            .allowQueue(boolean allowQueue) // optional (prevents several Toastys from queuing)
+//            .setGravity(int gravity, int xOffset, int yOffset) // optional (set toast gravity, offsets are optional)
+//            .supportDarkTheme(false) // optional (whether to support dark theme or not)
+//            .setRTL(true) // optional (icon is on the right)
+//            .apply(); // required
+        
     }
 
     /**

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nex3z.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  flChildSpacing="auto"
+  flChildSpacingForLastRow="align"
+  flRowSpacing="8dp"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Button
+    android:id="@+id/fragment_toasty_error"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/error" />
+
+  <Button
+    android:id="@+id/fragment_toasty_success"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/success" />
+
+  <Button
+    android:id="@+id/fragment_toasty_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/info" />
+
+  <Button
+    android:id="@+id/fragment_toasty_warning"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/warning" />
+
+  <Button
+    android:id="@+id/fragment_toasty_normal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/normal" />
+
+  <Button
+    android:id="@+id/fragment_toasty_custom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/custom" />
+
+</com.nex3z.flowlayout.FlowLayout>
