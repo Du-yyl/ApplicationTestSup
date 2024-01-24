@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.view.activity.MainActivity">
+
+  <Button
+    android:id="@+id/btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="修改"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/btn1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="保存"
+    app:layout_constraintLeft_toRightOf="@id/btn"
+    app:layout_constraintTop_toTopOf="@id/btn" />
+
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toRightOf="@id/btn1"
+    app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+  <Button
+    android:id="@+id/btn3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="修改(proto)"
+    app:layout_constraintLeft_toLeftOf="@+id/btn"
+    app:layout_constraintTop_toBottomOf="@id/btn" />
+
+  <Button
+    android:id="@+id/btn4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="保存(proto)"
+    app:layout_constraintLeft_toRightOf="@id/btn3"
+    app:layout_constraintTop_toTopOf="@id/btn3" />
+
+  <Button
+    android:id="@+id/btn5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="修改保存列表(proto)"
+    app:layout_constraintLeft_toLeftOf="@+id/btn3"
+    app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+  <Button
+    android:id="@+id/btn6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="获取列表(proto)"
+    app:layout_constraintLeft_toRightOf="@id/btn5"
+    app:layout_constraintTop_toTopOf="@id/btn5" />
+
+  <Button
+    android:id="@+id/btn7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="更新列表(proto)"
+    app:layout_constraintLeft_toRightOf="@id/btn6"
+    app:layout_constraintTop_toTopOf="@id/btn6" />
+
+  <Button
+    android:id="@+id/btn8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="shareP数据更新"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/btn5" />
+
+  <Button
+    android:id="@+id/btn9"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="shareP数据获取"
+    app:layout_constraintLeft_toRightOf="@id/btn8"
+    app:layout_constraintTop_toTopOf="@id/btn8" />
+
+  <Button
+    android:id="@+id/btn10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Room数据更新"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btn8" />
+
+  <Button
+    android:id="@+id/btn11"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Room数据获取"
+    app:layout_constraintLeft_toRightOf="@+id/btn10"
+    app:layout_constraintTop_toTopOf="@+id/btn10" />
+
+  <fragment
+    android:layout_width="match_parent"
+    android:id="@+id/fragment_login"
+    android:name="com.view.fragment.WellPlateFragment"
+    android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
