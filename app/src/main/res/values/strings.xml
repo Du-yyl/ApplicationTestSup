@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">Yuanll App</string>
+
+  <string name="username">用户名</string>
+  <string name="password">密码</string>
+  <string name="login">登陆</string>
+  <string name="rememberMe">记住我</string>
+  <string name="autoLogin">自动登陆</string>
+</resources>

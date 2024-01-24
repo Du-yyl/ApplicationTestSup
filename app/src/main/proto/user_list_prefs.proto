@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "user_prefs.proto";
+
+option java_package = "com.codelab.android.datastore";
+option java_multiple_files = true;
+option java_outer_classname = "UserListProto";
+
+/*
+定义用户数组
+*/
+message UserList {
+  repeated UserPreferences users = 4;
+}
