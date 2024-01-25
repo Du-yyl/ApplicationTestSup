@@ -3,11 +3,11 @@ package com.view.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.applicationtest.databinding.ActivityMainBinding
-import com.viewModule.MainViewModel
+import com.viewModel.MainViewModel
 import com.framework.foundation.ActivityBase
 
 class MainActivity : ActivityBase() {
-    // todo: 2024/1/24 23:22 将数据库测试按钮提升至单独组件而不是页面
+
     private lateinit var binding: ActivityMainBinding
 
     private val viewModel by viewModels<MainViewModel>()

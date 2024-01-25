@@ -31,4 +31,20 @@
     android:layout_height="wrap_content"
     app:layout_constraintTop_toBottomOf="@id/main_data_storage_2_toasty_line" />
 
+  <View
+    android:id="@+id/main_toasty_test_2_well_plate"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="16dp"
+    android:background="#000000"
+    app:layout_constraintTop_toBottomOf="@id/main_toasty_test" />
+
+  <!--  孔板对象-->
+  <androidx.fragment.app.FragmentContainerView
+    android:id="@+id/main_well_plate"
+    android:name="com.view.fragment.WellPlateFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/main_toasty_test_2_well_plate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

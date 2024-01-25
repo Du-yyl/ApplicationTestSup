@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="GridWellPlateComponent">
+<!--    行-->
+    <attr name="gridRows" format="integer"/>
+<!--    列-->
+    <attr name="gridColumns" format="integer"/>
+  </declare-styleable>
+</resources>

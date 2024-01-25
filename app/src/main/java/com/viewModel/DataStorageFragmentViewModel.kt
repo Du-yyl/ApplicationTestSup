@@ -1,4 +1,4 @@
-package com.viewModule
+package com.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

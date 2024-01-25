@@ -13,7 +13,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.applicationtest.databinding.ActivityLoginBinding
 import com.framework.foundation.ActivityBase
-import com.viewModule.LoginViewModel
+import com.viewModel.LoginViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

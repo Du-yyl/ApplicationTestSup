@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.applicationtest.databinding.FragmentDataStorageBinding
-import com.viewModule.DataStorageFragmentViewModel
+import com.viewModel.DataStorageFragmentViewModel
 
 /**
  * @time :2024/1/25 8:52 59
