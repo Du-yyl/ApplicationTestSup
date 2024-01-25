@@ -13,7 +13,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.applicationtest.databinding.ActivityLoginBinding
 import com.framework.foundation.ActivityBase
-import com.viewModule.LoginViewModule
+import com.viewModule.LoginViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,7 +30,7 @@ import kotlinx.coroutines.withContext
 class LoginActivity : ActivityBase() {
     private lateinit var binding: ActivityLoginBinding
 
-    private val viewModel by viewModels<LoginViewModule>()
+    private val viewModel by viewModels<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nex3z.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Button
+    android:id="@+id/DataStorePrefUpdate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStorePref更新数据" />
+
+  <Button
+    android:id="@+id/DataStorePrefSaveData"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStorePref保存数据" />
+
+  <Button
+    android:id="@+id/DataStoreProtoUpdate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStoreProto更新数据" />
+
+  <Button
+    android:id="@+id/DataStoreProtoSaveData"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStoreProto保存数据" />
+
+  <Button
+    android:id="@+id/DataStoreProtoAdd"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStoreProto增加数据" />
+
+  <Button
+    android:id="@+id/DataStoreProtoGetList"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStoreProto批量获取数据" />
+
+  <Button
+    android:id="@+id/DataStoreProtoUpdateForList"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="DataStoreProto通过数组更新数据" />
+
+  <Button
+    android:id="@+id/sharePUpdata"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="shareP数据更新" />
+
+  <Button
+    android:id="@+id/sharePGetData"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="shareP数据获取" />
+
+  <Button
+    android:id="@+id/RoomDataInsert"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Room添加数据" />
+
+  <Button
+    android:id="@+id/RoomDataFind"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Room获取数据" />
+
+</com.nex3z.flowlayout.FlowLayout>

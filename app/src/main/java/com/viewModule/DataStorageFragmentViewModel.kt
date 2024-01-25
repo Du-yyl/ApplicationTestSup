@@ -15,33 +15,20 @@ import com.dataStorage.roomData.services.UserService
 import com.dataStorage.sharedPref.SharePrefHelper
 import com.enums.UserTypeEnum
 import com.expand.toJson
-import com.utils.JsonUtil
-import com.utils.Person
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.cancellable
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.flow.single
-import kotlinx.coroutines.flow.singleOrNull
-import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.newFixedThreadPoolContext
 import kotlinx.coroutines.withContext
-import kotlin.concurrent.thread
 
 /**
- * @time :2024/1/3 17:15 57
- * @className :MainViewMoudle
+ * @time :2024/1/25 8:56 07
+ * @className :DataStorageFragmentViewModule
  * @package :ApplicationTest
  * @author :weiyp
  * @description :
  * <p>
  */
-
-
-class MainViewModule : ViewModel() {
+class DataStorageFragmentViewModel : ViewModel() {
 
     private var index = 1
 
@@ -52,31 +39,37 @@ class MainViewModule : ViewModel() {
      */
     val weatherIndex = MutableLiveData<Int>(1)
 
-    private val instance = DataStorePreferencesHelper.getInstance()
-
     // ------------------------------------------------------------------
 
-    fun updateData() {
-
+    /**
+     * DataStorePref更新数据
+     */
+    fun dataStorePrefUpdate() {
         index++
         weatherIndex.postValue(index)
 
         viewModelScope.launch {
-            instance.saveValue("set_v", index)
+            DataStorePreferencesHelper.getInstance().saveValue("set_v", index)
         }
         Log.d("MainViewModule", "updateData: 更新数据 index: $index")
     }
 
-    fun saveData() {
+    /**
+     * DataStorePref保存数据
+     */
+    fun dataStorePrefSaveData() {
         viewModelScope.launch {
-            val i = instance.getValue("set_v", 0)
+            val i = DataStorePreferencesHelper.getInstance().getValue("set_v", 0)
             Log.d("MainViewModule", "saveData: 保存数据 获取数据： $i")
         }
     }
 
     // ------------------------------------------------------------------
 
-    fun updateDataProto() {
+    /**
+     * DataStoreProto更新数据
+     */
+    fun dataStoreProtoUpdate() {
         val userProto = DataStoreProtoHelper.getInstance().getUserProto()
         _flag = !_flag
 
@@ -86,10 +79,12 @@ class MainViewModule : ViewModel() {
         }
     }
 
-    fun getDataProto() {
+    /**
+     * DataStoreProto保存数据
+     */
+    fun dataStoreProtoSaveData() {
         val userProto = DataStoreProtoHelper.getInstance().getUserProto()
         val flow = UserRepository(userProto).getUser
-        Log.d("MainViewModule", "getDataProto: 点击")
         viewModelScope.launch {
             val first = flow.first()
             Log.d("MainViewModule", "getDataProto: ${first.sex}")
@@ -101,9 +96,9 @@ class MainViewModule : ViewModel() {
 
 
     /**
-     * 批量修改数据
+     * DataStoreProto增加数据
      */
-    fun updateSaveUserList() {
+    fun dataStoreProtoAdd() {
         val userListProto = DataStoreProtoHelper.getInstance().getUserListProto()
         val userListRepository = UserListRepository(userListProto)
 
@@ -121,9 +116,9 @@ class MainViewModule : ViewModel() {
     }
 
     /**
-     * 批量获取数据
+     * DataStoreProto批量获取数据
      */
-    fun getUserListData() {
+    fun dataStoreProtoGetList() {
         val userListProto = DataStoreProtoHelper.getInstance().getUserListProto()
         val userListRepository = UserListRepository(userListProto)
 
@@ -142,7 +137,10 @@ class MainViewModule : ViewModel() {
         }
     }
 
-    fun updateList() {
+    /**
+     * DataStoreProto通过数组更新数据
+     */
+    fun dataStoreProtoUpdateForList() {
         val userListProto = DataStoreProtoHelper.getInstance().getUserListProto()
         val userListRepository = UserListRepository(userListProto)
         viewModelScope.launch {
@@ -197,7 +195,11 @@ class MainViewModule : ViewModel() {
 
 
     // Room Database
-    fun roomDataUpdate() {
+
+    /**
+     * Room获取数据
+     */
+    fun roomDataInsert() {
         val databaseHelper = RoomDatabaseHelper.getInstance()
         val userService = UserService(databaseHelper.userDatabaseDao)
         databaseHelper.userDatabaseDao.let {
@@ -217,7 +219,10 @@ class MainViewModule : ViewModel() {
         }
     }
 
-    fun getRoomData() {
+    /**
+     * Room获取数据
+     */
+    fun roomDataFind() {
         val databaseHelper = RoomDatabaseHelper.getInstance()
         val userService = UserService(databaseHelper.userDatabaseDao)
         databaseHelper.userDatabaseDao.let {

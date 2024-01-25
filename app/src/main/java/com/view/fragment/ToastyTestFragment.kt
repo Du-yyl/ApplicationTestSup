@@ -36,7 +36,6 @@ class ToastyTestFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.fragmentToastyError.setOnClickListener {
             Toasty.error(
                 requireContext(),
@@ -71,7 +70,6 @@ class ToastyTestFragment : Fragment() {
                 true,
                 true
             ).show();
-
         }
     }
 }

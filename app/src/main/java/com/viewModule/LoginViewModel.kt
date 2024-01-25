@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
  * @description :
  * <p>
  */
-class LoginViewModule : ViewModel() {
+class LoginViewModel : ViewModel() {
     /**
      * 记住我
      */
