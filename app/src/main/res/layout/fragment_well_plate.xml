@@ -36,13 +36,49 @@
     app:layout_constraintLeft_toRightOf="@+id/wellplate_column"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <com.view.customize.GridWellPlateComponent
-    android:id="@+id/wellpate_well_plate"
+  <com.view.components.GridWellPlateComponent1
+    android:id="@+id/gridView1"
     android:layout_width="400dp"
     android:layout_height="400dp"
+    android:layout_marginTop="60dp"
+    android:clipToPadding="true"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!--  <androidx.recyclerview.widget.RecyclerView-->
+  <!--    android:id="@+id/gridView1"-->
+  <!--    android:layout_width="400dp"-->
+  <!--    android:layout_height="400dp"-->
+  <!--    android:layout_marginTop="60dp"-->
+  <!--    android:clipToPadding="false"-->
+  <!--    app:layout_constraintLeft_toLeftOf="parent"-->
+  <!--    app:layout_constraintRight_toRightOf="parent"-->
+  <!--    app:layout_constraintTop_toTopOf="parent"-->
+  <!--    app:spanCount="6" />-->
+
+  <GridView
+    android:id="@+id/gridView"
+    android:layout_width="400dp"
+    android:layout_height="400dp"
+    android:layout_marginTop="60dp"
+    android:gravity="center"
+    android:horizontalSpacing="5dp"
+    android:numColumns="6"
+    android:stretchMode="columnWidth"
+    android:visibility="gone"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <com.view.components.GridWellPlateComponent
+    android:id="@+id/wellpate_well_plate"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
     android:layout_marginTop="70dp"
-    app:gridColumns="5"
-    app:gridRows="5"
+    android:visibility="gone"
+    app:gridColumns="12"
+    app:gridRows="12"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />

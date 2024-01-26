@@ -1,4 +1,4 @@
-package com.view.customize
+package com.view.components
 
 import android.content.Context
 import android.graphics.Color
@@ -8,8 +8,6 @@ import android.util.Log
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.TextView
-import androidx.room.RewriteQueriesToDropUnusedColumns
-import org.w3c.dom.Text
 
 /**
  * @time :2024/1/25 9:54 23
@@ -80,7 +78,7 @@ class GridWellPlateComponent @JvmOverloads constructor(
                 rowSpec = spec(UNDEFINED, 1f)
                 setMargins(0, 0, 8, 8)
             }
-            background = ColorDrawable(Color.BLUE)
+            background = ColorDrawable(Color.CYAN)
         }
     }
 
@@ -90,16 +88,53 @@ class GridWellPlateComponent @JvmOverloads constructor(
     fun updateRowsOrColumns(newRows: Int, newColumns: Int) {
         Log.d(
             "GridWellPlateComponent",
-            "updateRowsOrColumns() called with: newRows = $newRows, newColumns = $newColumns"
+            "updateRowsOrColumns() called with: newRows = $newRows, newColumns = $newColumns," +
+                    " rows = $rows, column = $columns"
         )
+        // 如果数据和原始相同，则保持不变
+        if (rows == newRows && columns == newColumns) return
+
         if (newRows == 0 || newColumns == 0) {
             removeAllViews()
             rows = newRows
             columns = newColumns
+
+            rowCount = rows
+            columnCount = columns
+
+            return
         }
 
         val diffRows = newRows - rows
         val diffColumns = newColumns - columns
+
+        val newCount = newColumns * newRows
+        val oldCount = rows * columns
+
+        Log.d(
+            "GridWellPlateComponent",
+            "updateRowsOrColumns: newCount: $newCount, oldCount: $oldCount"
+        )
+
+        // 如果新的数据更大，则相应增加元素
+        if (newCount > oldCount) {
+            for (i in 0 until newCount - oldCount) {
+                val element = createElement(i.toString())
+                addView(element)
+            }
+        } else if (newCount < oldCount) {
+            val i = oldCount - newCount
+            removeViews(newCount, i)
+        }
+
+        rows = newRows
+        columns = newColumns
+
+        rowCount = rows
+        columnCount = columns
+
+        return
+
 
         if (diffRows > 0) {
             for (i in 0 until diffRows * columns) {
@@ -107,6 +142,10 @@ class GridWellPlateComponent @JvmOverloads constructor(
                 addView(element)
             }
         } else if (diffRows < 0) {
+            Log.d(
+                "GridWellPlateComponent",
+                "updateRowsOrColumns: diffRows * columns = ${diffRows * columns}"
+            )
             removeViews(0, -diffRows * columns)
         }
 

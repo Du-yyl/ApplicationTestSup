@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context="com.view.activity.MainActivity">
 
-  <!--  数据展示操作-->
-  <androidx.fragment.app.FragmentContainerView
-    android:id="@+id/main_data_storage"
-    android:name="com.view.fragment.DataStorageFragment"
-    android:layout_width="match_parent"
+  <LinearLayout
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:orientation="vertical">
 
-  <View
-    android:id="@+id/main_data_storage_2_toasty_line"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:layout_marginTop="16dp"
-    android:background="#000000"
-    app:layout_constraintTop_toBottomOf="@id/main_data_storage" />
+    <!--  数据展示操作-->
+    <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/main_data_storage"
+      android:name="com.view.fragment.DataStorageFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toTopOf="parent" />
 
-  <!--  toasty 提示控件-->
-  <androidx.fragment.app.FragmentContainerView
-    android:id="@+id/main_toasty_test"
-    android:name="com.view.fragment.ToastyTestFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/main_data_storage_2_toasty_line" />
+    <View
+      android:id="@+id/main_data_storage_2_toasty_line"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:background="#000000"
+      app:layout_constraintTop_toBottomOf="@id/main_data_storage" />
 
-  <View
-    android:id="@+id/main_toasty_test_2_well_plate"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:layout_marginTop="16dp"
-    android:background="#000000"
-    app:layout_constraintTop_toBottomOf="@id/main_toasty_test" />
+    <!--  toasty 提示控件-->
+    <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/main_toasty_test"
+      android:name="com.view.fragment.ToastyTestFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/main_data_storage_2_toasty_line" />
 
-  <!--  孔板对象-->
-  <androidx.fragment.app.FragmentContainerView
-    android:id="@+id/main_well_plate"
-    android:name="com.view.fragment.WellPlateFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/main_toasty_test_2_well_plate" />
+    <View
+      android:id="@+id/main_toasty_test_2_well_plate"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:background="#000000"
+      app:layout_constraintTop_toBottomOf="@id/main_toasty_test" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--  孔板对象-->
+    <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/main_well_plate"
+      android:name="com.view.fragment.WellPlateTestFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/main_toasty_test_2_well_plate" />
+  </LinearLayout>
+
+</ScrollView>
