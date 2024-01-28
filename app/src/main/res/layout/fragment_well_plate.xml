@@ -36,6 +36,14 @@
     app:layout_constraintLeft_toRightOf="@+id/wellplate_column"
     app:layout_constraintTop_toTopOf="parent" />
 
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/update"
+    android:id="@+id/wellplate_update_row_column"
+    app:layout_constraintLeft_toRightOf="@+id/wellplate_column_value"
+    app:layout_constraintTop_toTopOf="parent" />
+
   <com.view.components.GridWellPlateComponent1
     android:id="@+id/gridView1"
     android:layout_width="400dp"

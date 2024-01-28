@@ -50,4 +50,5 @@ Duis eleifend purus ex, vel dictum mi feugiat at. Aenean ultricies luctus erat a
   <string name="test">测试</string>
   <string name="row">行</string>
   <string name="column">列</string>
+  <string name="update">更新</string>
 </resources>

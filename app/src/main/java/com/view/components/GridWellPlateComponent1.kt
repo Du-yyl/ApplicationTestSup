@@ -1,13 +1,17 @@
 package com.view.components
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.view.adapter.WellPlateAdapter
 import com.view.customize.CustomGridLayoutManager
 import com.viewModel.AdapterWellPlateElementViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
@@ -23,10 +27,6 @@ class GridWellPlateComponent1 @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : RecyclerView(context, attrs, defStyleAttr) {
-
-    private var rows: Int = 0
-    private var columns: Int = 0
-
     /**
      * 多少列
      */
@@ -63,9 +63,6 @@ class GridWellPlateComponent1 @JvmOverloads constructor(
 
     }
 
-    fun setData(dataModel: AdapterWellPlateElementViewModel){
-        wellPlateAdapter.addItem(dataModel)
-    }
 
     fun updateRowOrColumn(row: Int, column: Int) {
         Log.d(
@@ -77,21 +74,14 @@ class GridWellPlateComponent1 @JvmOverloads constructor(
         layoutManager = CustomGridLayoutManager(context, column).apply {
             setScrollEnabled(false)
         }
-        Log.d("GridWellPlateComponent1", "updateRowOrColumn: 更新 layoutManager")
 
         val count = row * column
-
-        var subCount = count
-
-        val wellPlateAdapter = WellPlateAdapter(adapterList)
-
-        adapter = wellPlateAdapter
 
         for (i in 0 until count) {
             adapterList.add(AdapterWellPlateElementViewModel(i.toString()))
         }
 
-        wellPlateAdapter.setData(adapterList)
+        wellPlateAdapter.updateData(adapterList)
 
         Log.d("GridWellPlateComponent1", "updateRowOrColumn: 渲染完毕")
     }
