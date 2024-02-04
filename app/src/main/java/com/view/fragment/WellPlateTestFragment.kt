@@ -37,6 +37,7 @@ class WellPlateTestFragment : Fragment() {
         binding = FragmentWellPlateBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,7 +56,6 @@ class WellPlateTestFragment : Fragment() {
             } catch (e: Exception) {
                 0
             }
-
         }
         // 行变化
         binding.wellplateRowValue.addTextChangedListener {
@@ -67,8 +67,10 @@ class WellPlateTestFragment : Fragment() {
         }
 
         // 按钮点击更新
-        binding.wellplateUpdateRowColumn.setOnClickListener{
-            binding.gridView1.updateRowOrColumn(row, cloumn)
+        binding.wellplateUpdateRowColumn.setOnClickListener {
+//            binding.gridView1.updateRowOrColumn(row, cloumn)
+            binding.gridView2.updateRowOrColumn(row, cloumn)
+
         }
     }
 }

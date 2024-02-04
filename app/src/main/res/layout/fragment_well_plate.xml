@@ -37,11 +37,20 @@
     app:layout_constraintTop_toTopOf="parent" />
 
   <Button
+    android:id="@+id/wellplate_update_row_column"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/update"
-    android:id="@+id/wellplate_update_row_column"
     app:layout_constraintLeft_toRightOf="@+id/wellplate_column_value"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <com.view.components.CircleDrawingView
+    android:id="@+id/gridView2"
+    android:layout_width="match_parent"
+    android:layout_height="320dp"
+    android:layout_marginTop="60dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <com.view.components.GridWellPlateComponent1
@@ -50,20 +59,10 @@
     android:layout_height="400dp"
     android:layout_marginTop="60dp"
     android:clipToPadding="true"
+    android:visibility="gone"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
-
-  <!--  <androidx.recyclerview.widget.RecyclerView-->
-  <!--    android:id="@+id/gridView1"-->
-  <!--    android:layout_width="400dp"-->
-  <!--    android:layout_height="400dp"-->
-  <!--    android:layout_marginTop="60dp"-->
-  <!--    android:clipToPadding="false"-->
-  <!--    app:layout_constraintLeft_toLeftOf="parent"-->
-  <!--    app:layout_constraintRight_toRightOf="parent"-->
-  <!--    app:layout_constraintTop_toTopOf="parent"-->
-  <!--    app:spanCount="6" />-->
 
   <GridView
     android:id="@+id/gridView"
@@ -75,18 +74,6 @@
     android:numColumns="6"
     android:stretchMode="columnWidth"
     android:visibility="gone"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-  <com.view.components.GridWellPlateComponent
-    android:id="@+id/wellpate_well_plate"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
-    android:layout_marginTop="70dp"
-    android:visibility="gone"
-    app:gridColumns="12"
-    app:gridRows="12"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />

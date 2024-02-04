@@ -13,6 +13,7 @@
 
     <!--  数据展示操作-->
     <androidx.fragment.app.FragmentContainerView
+      android:visibility="gone"
       android:id="@+id/main_data_storage"
       android:name="com.view.fragment.DataStorageFragment"
       android:layout_width="match_parent"
@@ -29,6 +30,7 @@
 
     <!--  toasty 提示控件-->
     <androidx.fragment.app.FragmentContainerView
+      android:visibility="gone"
       android:id="@+id/main_toasty_test"
       android:name="com.view.fragment.ToastyTestFragment"
       android:layout_width="match_parent"
@@ -43,13 +45,23 @@
       android:background="#000000"
       app:layout_constraintTop_toBottomOf="@id/main_toasty_test" />
 
+    <!--  孔板展示对象-->
+    <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/main_well_plate_show"
+      android:name="com.view.fragment.WellPlateShowFragment"
+      android:layout_width="match_parent"
+      android:layout_height="400dp"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@id/main_well_plate" />
+
     <!--  孔板对象-->
     <androidx.fragment.app.FragmentContainerView
       android:id="@+id/main_well_plate"
       android:name="com.view.fragment.WellPlateTestFragment"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:layout_constraintTop_toBottomOf="@id/main_toasty_test_2_well_plate" />
+      app:layout_constraintTop_toBottomOf="@id/main_well_plate_show" />
+
   </LinearLayout>
 
 </ScrollView>

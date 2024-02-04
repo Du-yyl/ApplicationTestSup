@@ -20,4 +20,6 @@
     app:layout_constraintLeft_toLeftOf="@id/adapter_well_plate_text"
     app:layout_constraintTop_toTopOf="parent" />
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

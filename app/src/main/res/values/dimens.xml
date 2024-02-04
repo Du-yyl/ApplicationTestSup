@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  自定义宽度数值-->
+
+<!--  展示实验对象宽高设置-->
+  <dimen name="well_plate_show_size">40dp</dimen>
+
+</resources>

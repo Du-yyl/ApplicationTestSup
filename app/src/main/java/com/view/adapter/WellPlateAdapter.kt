@@ -32,7 +32,7 @@ class WellPlateAdapter(list: List<AdapterWellPlateElementViewModel>) :
         /**
          * 切片大小
          */
-        val sliceSize = 10
+        val sliceSize = 5
 
         /**
          * 元素更新最低延迟时间
@@ -42,7 +42,7 @@ class WellPlateAdapter(list: List<AdapterWellPlateElementViewModel>) :
         /**
          * 延迟时间间隔
          */
-        var delayIntervalTime = 10
+        var delayIntervalTime = 5
 
         /**
          * 最大元素个数
@@ -76,8 +76,24 @@ class WellPlateAdapter(list: List<AdapterWellPlateElementViewModel>) :
         // 元素个数不能超过 maxItemSize (500)
         if (newDataList.size > maxItemSize) throw Exception("元素个数不能超过 $maxItemSize ")
 
+        // 如果数量相同
+        if (newDataList.size == showcaseList.size) return
+
+        // 清空数组
+        showcaseList.clear()
+
+        // 获取切片数组
+        val arraySlicing = arraySlicing(
+            newDataList.subList(showcaseList.size, newDataList.size)
+        )
+
+        // 增加数据
+        elementRecursivelyAdd(arraySlicing.toMutableList(), delayTime)
+
+        return
+
         // 如果新数组更小 或 相同
-        if (newDataList.size <= showcaseList.size) {
+        if (newDataList.size < showcaseList.size) {
             val diffCallback = WellPlateAdapterDiffCallback(showcaseList, newDataList)
             val diffResult = DiffUtil.calculateDiff(diffCallback)
             diffResult.dispatchUpdatesTo(this)
@@ -93,7 +109,7 @@ class WellPlateAdapter(list: List<AdapterWellPlateElementViewModel>) :
             )
 
             // 清空数组
-//            showcaseList.clear()
+            showcaseList.clear()
 
             // 增加数据
             elementRecursivelyAdd(arraySlicing.toMutableList(), delayTime)
