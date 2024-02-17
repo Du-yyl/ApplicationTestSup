@@ -1,6 +1,7 @@
 package com.view.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.example.applicationtest.databinding.ActivityMainBinding
 import com.viewModel.MainViewModel
@@ -14,7 +15,6 @@ class MainActivity : ActivityBase() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 //        这两种方式只是使用方式不同，但是整体效果相同
 //        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         binding = ActivityMainBinding.inflate(layoutInflater)

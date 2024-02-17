@@ -46,7 +46,7 @@
 
   <com.view.components.CircleDrawingView
     android:id="@+id/gridView2"
-    android:layout_width="match_parent"
+    android:layout_width="400dp"
     android:layout_height="320dp"
     android:layout_marginTop="60dp"
     app:layout_constraintLeft_toLeftOf="parent"

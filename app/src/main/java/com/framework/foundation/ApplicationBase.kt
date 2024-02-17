@@ -1,6 +1,7 @@
 package com.framework.foundation
 
 import android.app.Application
+import android.content.Context
 import android.graphics.Typeface
 import android.util.Log
 import android.widget.Toast
@@ -46,6 +47,9 @@ open class ApplicationBase : Application() {
         Log.d("ApplicationBase", "程序启动")
         // 全局异常捕捉
         GlobalExceptionHandler.setupExceptionHandler(this)
+
+        Log.d("ApplicationBase", "onCreate: displayMetrics：${resources.displayMetrics}")
+
 
         // 数据库初始化
         initData()
